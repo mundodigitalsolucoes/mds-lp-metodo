@@ -1,95 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 228 18% 96%;
+    --foreground: 231 27% 26%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 231 27% 26%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 231 27% 26%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 228 41% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 228 30% 49%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 228 30% 94%;
+    --muted-foreground: 228 20% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 78% 64%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 228 20% 85%;
+    --input: 228 20% 85%;
+    --ring: 228 41% 38%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* MDS custom tokens */
+    --navy: 233 28% 26%;
+    --navy-deep: 233 36% 19%;
+    --royal: 228 41% 38%;
+    --bright: 228 42% 49%;
+    --accent-blue: 220 78% 64%;
+    --surface-light: 228 40% 96%;
+    --off-white: 228 30% 83%;
+    --whatsapp: 142 70% 49%;
+
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,5 +67,118 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .section-dark {
+    background-color: hsl(var(--navy));
+    color: hsl(0 0% 100%);
+  }
+
+  .section-dark-deep {
+    background-color: hsl(var(--navy-deep));
+    color: hsl(0 0% 100%);
+  }
+
+  .section-light {
+    background-color: hsl(var(--surface-light));
+    color: hsl(var(--navy));
+  }
+
+  .section-white {
+    background-color: hsl(0 0% 100%);
+    color: hsl(var(--navy));
+  }
+
+  .text-off-white {
+    color: hsl(var(--off-white));
+  }
+
+  .btn-primary-cta {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
+    background-color: hsl(0 0% 100%);
+    color: hsl(var(--navy));
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .btn-primary-cta:hover {
+    background-color: hsl(var(--surface-light));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsl(0 0% 0% / 0.2);
+  }
+
+  .btn-outline-cta {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
+    background-color: transparent;
+    color: hsl(0 0% 100%);
+    border: 1.5px solid hsl(0 0% 100% / 0.4);
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .btn-outline-cta:hover {
+    border-color: hsl(0 0% 100%);
+    background-color: hsl(0 0% 100% / 0.08);
+    transform: translateY(-2px);
+  }
+
+  .btn-dark-cta {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
+    background-color: hsl(var(--navy));
+    color: hsl(0 0% 100%);
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .btn-dark-cta:hover {
+    background-color: hsl(var(--navy-deep));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsl(var(--navy) / 0.3);
+  }
+
+  .cta-banner {
+    background-color: hsl(var(--royal));
+    color: hsl(0 0% 100%);
+    font-family: var(--font-body);
+  }
+
+  .card-mds {
+    @apply rounded-2xl p-6 transition-all duration-300;
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    background-color: hsl(0 0% 100% / 0.05);
+  }
+  .card-mds:hover {
+    border-color: hsl(0 0% 100% / 0.2);
+    background-color: hsl(0 0% 100% / 0.08);
+    transform: translateY(-4px);
+  }
+
+  .card-light {
+    @apply rounded-2xl p-6 transition-all duration-300;
+    background-color: hsl(0 0% 100%);
+    border: 1px solid hsl(var(--navy) / 0.08);
+  }
+  .card-light:hover {
+    border-color: hsl(var(--navy) / 0.15);
+    box-shadow: 0 8px 32px hsl(var(--navy) / 0.08);
+    transform: translateY(-4px);
+  }
+
+  .animate-fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .animate-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
