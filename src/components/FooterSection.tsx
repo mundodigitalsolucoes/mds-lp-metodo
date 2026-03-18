@@ -18,7 +18,7 @@ const FooterSection = () => (
             aria-label="Instagram">
             <Instagram size={18} />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.linkedin.com/in/mudo-digital-solu%C3%A7%C3%B5es-834653263/" target="_blank" rel="noopener noreferrer"
             className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
             style={{ backgroundColor: "hsl(0 0% 100% / 0.08)" }}
             aria-label="LinkedIn">
