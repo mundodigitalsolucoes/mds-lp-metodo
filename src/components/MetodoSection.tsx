@@ -1,4 +1,4 @@
-import { Search, Map, Zap, BarChart2, Filter, Heart } from "lucide-react";
+import { Search, Map, Zap, BarChart2, Filter, Heart, CalendarDays } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const pilares = [
@@ -25,7 +25,7 @@ const MetodoSection = () => (
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto mb-12">
         {pilares.map((p, i) => (
           <div key={p.num} className="animate-fade-in card-mds" style={{ transitionDelay: `${0.1 * (i + 1)}s` }}>
             <div className="flex items-start gap-4">
@@ -40,6 +40,12 @@ const MetodoSection = () => (
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="animate-fade-in text-center" style={{ transitionDelay: "0.8s" }}>
+        <a href="#agendar" className="btn-accent-cta">
+          <CalendarDays size={18} /> Agendar Consultoria Gratuita
+        </a>
       </div>
     </div>
   </AnimatedSection>

@@ -7,6 +7,7 @@ import CasesSection from "@/components/CasesSection";
 import DepoimentosSection from "@/components/DepoimentosSection";
 import FaqSection from "@/components/FaqSection";
 import CtaFinalSection from "@/components/CtaFinalSection";
+import FormSection from "@/components/FormSection";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
@@ -23,6 +24,7 @@ const MetodoMDS = () => (
     <CtaBanner />
     <FaqSection />
     <CtaFinalSection />
+    <FormSection />
     <FooterSection />
     <WhatsAppFloat />
   </>

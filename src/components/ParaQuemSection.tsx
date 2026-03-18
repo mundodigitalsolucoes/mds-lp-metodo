@@ -1,4 +1,4 @@
-import { XCircle, Clock, TrendingUp, ArrowRight } from "lucide-react";
+import { XCircle, Clock, TrendingUp, CalendarDays } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const profiles = [
@@ -42,13 +42,8 @@ const ParaQuemSection = () => (
       </div>
 
       <div className="animate-fade-in text-center" style={{ transitionDelay: "0.6s" }}>
-        <a
-          href="https://wa.me/5517992822597"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-body font-medium text-accent-blue hover:underline"
-        >
-          Esse é o seu perfil? → Falar com especialista <ArrowRight size={16} />
+        <a href="#agendar" className="btn-accent-dark-cta">
+          <CalendarDays size={18} /> Agendar Consultoria Gratuita
         </a>
       </div>
     </div>

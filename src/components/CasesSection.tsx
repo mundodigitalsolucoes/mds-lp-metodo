@@ -1,29 +1,59 @@
-import { MessageCircle, Quote } from "lucide-react";
+import { MessageCircle, Play } from "lucide-react";
+import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 
 const cases = [
   {
-    name: "Ótica São Paulo",
-    nicho: "Varejo / Saúde Visual",
-    resultado: "Faturamento 2x em 8 meses",
-    texto: "A Ótica São Paulo chegou com presença digital descoordenada. Fizemos o rebranding completo e estruturamos toda a jornada do cliente. Em 8 meses o faturamento dobrou. Hoje são 3 anos de parceria.",
-    badge: "⭐ 3 anos de parceria",
-  },
-  {
-    name: "Chopp Brasser",
-    nicho: "Food & Beverage — B2C + B2B",
-    resultado: "Lançamento do zero ao mercado",
-    texto: "Construímos tudo do zero — identidade, site, tráfego pago e redes sociais. O Chopp Brasser entrou no mercado de Rio Preto com estrutura desde o primeiro dia.",
-    badge: "🚀 Lançamento estruturado",
-  },
-  {
     name: "Montalvão Classic",
-    nicho: "Eventos / Fisiculturismo",
-    resultado: "3.000 leads + 800 pessoas",
-    texto: "Em 1 ano de parceria geramos mais de 3.000 leads qualificados e levamos 800 pessoas ao maior campeonato de fisiculturismo da região. Tráfego, conteúdo e funil funcionando juntos.",
-    badge: "🏆 Maior evento da região",
+    video: "/videos/daniel-montalvao.mp4",
+  },
+  {
+    name: "Ótica São Paulo",
+    video: "/videos/victor-agrelli.mp4",
+  },
+  {
+    name: "Chopp Brasser Rio Preto",
+    video: "/videos/chopp-brasser.mp4",
   },
 ];
+
+const VideoCard = ({ c, i }: { c: typeof cases[0]; i: number }) => {
+  const [playing, setPlaying] = useState(false);
+
+  return (
+    <div key={c.name} className="animate-fade-in flex flex-col" style={{ transitionDelay: `${0.15 * (i + 1)}s` }}>
+      <div className="rounded-2xl overflow-hidden relative" style={{ backgroundColor: "hsl(var(--royal))" }}>
+        <div className="px-3 py-2">
+          <span className="font-body text-xs font-medium text-off-white">{c.name}</span>
+        </div>
+        <div className="relative aspect-[9/16] max-h-[480px] mx-auto">
+          <video
+            src={c.video}
+            className="w-full h-full object-cover"
+            controls={playing}
+            playsInline
+            preload="metadata"
+            onPlay={() => setPlaying(true)}
+          />
+          {!playing && (
+            <button
+              onClick={() => {
+                const video = document.querySelector(`video[src="${c.video}"]`) as HTMLVideoElement;
+                video?.play();
+                setPlaying(true);
+              }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: "hsl(var(--accent-blue))" }}>
+                <Play size={28} fill="white" className="ml-1" />
+              </div>
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const CasesSection = () => (
   <AnimatedSection className="section-dark-deep py-20 lg:py-28">
@@ -37,26 +67,15 @@ const CasesSection = () => (
         </h2>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
         {cases.map((c, i) => (
-          <div key={c.name} className="animate-fade-in card-mds flex flex-col" style={{ transitionDelay: `${0.15 * (i + 1)}s` }}>
-            <Quote size={24} className="text-accent-blue mb-3 opacity-50" />
-            <span className="font-body text-xs text-off-white mb-1">{c.nicho}</span>
-            <h3 className="font-display font-bold text-lg mb-1">{c.name}</h3>
-            <div className="font-display font-extrabold text-xl text-accent-blue mb-3">{c.resultado}</div>
-            <p className="font-body font-light text-sm text-off-white leading-relaxed flex-1 mb-4">{c.texto}</p>
-            <span className="inline-block font-body text-xs font-medium px-3 py-1.5 rounded-full"
-              style={{ backgroundColor: "hsl(var(--accent-blue) / 0.15)", color: "hsl(var(--accent-blue))" }}>
-              {c.badge}
-            </span>
-          </div>
+          <VideoCard key={c.name} c={c} i={i} />
         ))}
       </div>
 
       <div className="animate-fade-in text-center" style={{ transitionDelay: "0.6s" }}>
-        <p className="font-display font-bold text-xl mb-5">Quer ser o próximo case?</p>
-        <a href="https://wa.me/5517992822597" target="_blank" rel="noopener noreferrer" className="btn-primary-cta">
-          <MessageCircle size={18} /> Conversar com a MDS
+        <a href="https://wa.me/5517992822597" target="_blank" rel="noopener noreferrer" className="btn-accent-cta text-lg">
+          <MessageCircle size={20} /> Fale com nossos especialistas
         </a>
       </div>
     </div>

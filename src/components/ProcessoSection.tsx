@@ -1,3 +1,4 @@
+import { CalendarDays } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const etapas = [
@@ -19,7 +20,7 @@ const ProcessoSection = () => (
         </h2>
       </div>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto mb-12">
         {/* Desktop horizontal */}
         <div className="hidden md:grid grid-cols-4 gap-6 relative">
           <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5" style={{ backgroundColor: "hsl(var(--accent-blue) / 0.2)" }} />
@@ -50,6 +51,12 @@ const ProcessoSection = () => (
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="animate-fade-in text-center" style={{ transitionDelay: "0.8s" }}>
+        <a href="#agendar" className="btn-accent-dark-cta">
+          <CalendarDays size={18} /> Agendar Consultoria Gratuita
+        </a>
       </div>
     </div>
   </AnimatedSection>
