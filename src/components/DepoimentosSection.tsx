@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+import { Star, CalendarDays } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const reviews = [
@@ -60,9 +60,15 @@ const DepoimentosSection = () => (
         ))}
       </div>
 
-      <p className="animate-fade-in text-center font-body text-sm font-medium opacity-70" style={{ transitionDelay: "0.6s" }}>
+      <p className="animate-fade-in text-center font-body text-sm font-medium opacity-70 mb-8" style={{ transitionDelay: "0.6s" }}>
         ⭐ 5.0 · Avaliações verificadas no Google
       </p>
+
+      <div className="animate-fade-in text-center" style={{ transitionDelay: "0.7s" }}>
+        <a href="#agendar" className="btn-accent-dark-cta">
+          <CalendarDays size={18} /> Agendar Consultoria Gratuita
+        </a>
+      </div>
     </div>
   </AnimatedSection>
 );

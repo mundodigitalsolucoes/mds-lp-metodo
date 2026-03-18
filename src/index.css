@@ -127,6 +127,32 @@
     transform: translateY(-2px);
   }
 
+  .btn-accent-cta {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
+    background-color: hsl(var(--accent-blue));
+    color: hsl(0 0% 100%);
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .btn-accent-cta:hover {
+    background-color: hsl(var(--bright));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsl(var(--accent-blue) / 0.3);
+  }
+
+  .btn-accent-dark-cta {
+    @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
+    background-color: hsl(var(--accent-blue));
+    color: hsl(0 0% 100%);
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .btn-accent-dark-cta:hover {
+    background-color: hsl(var(--bright));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px hsl(var(--accent-blue) / 0.3);
+  }
+
   .btn-dark-cta {
     @apply inline-flex items-center gap-2 px-8 py-4 rounded-xl font-medium text-base transition-all duration-300;
     background-color: hsl(var(--navy));

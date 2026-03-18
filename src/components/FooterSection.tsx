@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, MessageSquare } from "lucide-react";
 import logoNegativa from "@/assets/logo-mds-negativa.png";
 
 const FooterSection = () => (
@@ -6,7 +6,7 @@ const FooterSection = () => (
     <div className="container mx-auto px-6 py-14">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
         <div>
-          <img src={logoNegativa} alt="Mundo Digital Soluções" className="h-10 mb-3" />
+          <img src={logoNegativa} alt="Mundo Digital Soluções" className="h-28 sm:h-32 mb-3" />
           <p className="font-body font-light text-sm text-off-white">
             Crescimento previsível não é sorte. É método.
           </p>
@@ -24,6 +24,21 @@ const FooterSection = () => (
             aria-label="LinkedIn">
             <Linkedin size={18} />
           </a>
+          <button
+            onClick={() => {
+              // Chatwoot toggle - placeholder
+              if ((window as any).$chatwoot) {
+                (window as any).$chatwoot.toggle();
+              } else {
+                window.open("https://wa.me/5517992822597", "_blank");
+              }
+            }}
+            className="flex items-center gap-2 px-4 h-10 rounded-full font-body text-sm font-medium transition-colors"
+            style={{ backgroundColor: "hsl(var(--accent-blue) / 0.2)", color: "hsl(var(--accent-blue))" }}
+          >
+            <MessageSquare size={16} />
+            Atendimento Online
+          </button>
         </div>
       </div>
 
