@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Syne", "sans-serif"],
-        body: ["DM Sans", "sans-serif"],
+        display: ["Square 721 BT", "Syne", "sans-serif"],
+        body: ["TW Cen MT", "DM Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
