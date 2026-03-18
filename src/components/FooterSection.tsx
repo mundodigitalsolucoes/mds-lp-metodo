@@ -51,7 +51,7 @@ const FooterSection = () => (
           <a href="#" className="hover:opacity-100 opacity-70 transition-opacity">Contato</a>
         </nav>
         <div className="font-body text-xs text-off-white opacity-50 space-y-1">
-          <p>fabio@mundodigitalsolucoes.com.br · (17) 99188-6725</p>
+          <p>fabio@mundodigitalsolucoes.com.br · (17) 99282-2597</p>
           <p>© 2025 Mundo Digital Soluções. Todos os direitos reservados.</p>
         </div>
       </div>
