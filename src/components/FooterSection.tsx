@@ -12,7 +12,7 @@ const FooterSection = () => (
           </p>
         </div>
         <div className="flex gap-3">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://www.instagram.com/mundodigital.solucoes/" target="_blank" rel="noopener noreferrer"
             className="w-10 h-10 rounded-full flex items-center justify-center transition-colors"
             style={{ backgroundColor: "hsl(0 0% 100% / 0.08)" }}
             aria-label="Instagram">
